@@ -23,6 +23,11 @@
   "documentation": "Documentation",
   "getStarted": "Get Started",
   "retry": "Retry",
+  
+  "titleImputTabLabel": "Title For Tasks",
+  "descriptionImputTabLabel": "Description For Tasks",
+  "createButtonSubmit": "Create",
+  "tasksTabLabel": "Tasks",
   "roles": {
     "owner": {
       "label": "Owner",
