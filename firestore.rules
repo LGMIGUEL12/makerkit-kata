@@ -87,6 +87,20 @@ service cloud.firestore {
     function canCreateOrganization() {
       return isSignedIn() && fieldsNotInCreateAction(['members', 'subscription']);
     }
+    
+// TODO: make those 4 permissions not hardcoded.
+    function canCreateTask() {
+      return true;
+    }
+    function canReadTask() {
+      return true;
+    }
+    function canUpdateTask() {
+      return true;
+    }
+    function canDeleteTask() {
+      return true;
+    }
 
     match /organizations/{organizationId} {
       allow create: if canCreateOrganization();
@@ -101,6 +115,13 @@ service cloud.firestore {
 
     match /users/{user} {
       allow read: if userId() == user;
+    }
+
+    match /tasks/{taskId} {
+      allow create: if canCreateTask();
+      allow read: if canReadTask();
+      allow update: if canUpdateTask();
+      allow delete: if canDeleteTask();
     }
   }
 }
