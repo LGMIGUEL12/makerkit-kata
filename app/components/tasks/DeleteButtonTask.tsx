@@ -17,9 +17,9 @@ const DeleteButtonTask: React.FCC<{ taskId: string }> = ({ taskId }) => {
     const promise = deleteTaskRequest(taskId);
 
     await toaster.promise(promise, {
-      success: t<string>(`post:deletePostSuccessMessage`),
-      error: t<string>(`post:deletePostErrorMessage`),
-      loading: t<string>(`post:deletePostLoadingMessage`),
+      success: t<string>(`common:deleteTaskSuccessMessage`),
+      error: t<string>(`common:deleteTaskErrorMessage`),
+      loading: t<string>(`common:deleteTaskLoadingMessage`),
     });
 
     setIsDeleting(false);
@@ -28,14 +28,14 @@ const DeleteButtonTask: React.FCC<{ taskId: string }> = ({ taskId }) => {
   return (
     <>
       <IconButton
-        data-cy={'delete-post-button'}
+        data-cy={'delete-task-button'}
         onClick={() => setIsDeleting(true)}
       >
         <TrashIcon className="dark h-6" />
       </IconButton>
       <If condition={isDeleting}>
         <Modal
-          heading={<Trans i18nKey={'post:deletePostModalHeading'} />}
+          heading={<Trans i18nKey={'common:deleteTaskModalHeading'} />}
           isOpen={isDeleting}
           setIsOpen={setIsDeleting}
         >
@@ -44,11 +44,11 @@ const DeleteButtonTask: React.FCC<{ taskId: string }> = ({ taskId }) => {
               <Trans i18nKey={'common:modalConfirmationQuestion'} />
             </p>
             <Button
-              data-cy={'confirm-delete-post-button'}
+              data-cy={'confirm-delete-task-button'}
               color={'danger'}
               onClick={onTaskDeleteRequest}
             >
-              <Trans i18nKey={'post:deletePostSubmitLabel'} />
+              <Trans i18nKey={'common:deleteTaskSubmitLabel'} />
             </Button>
           </div>
         </Modal>

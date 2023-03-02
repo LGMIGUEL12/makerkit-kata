@@ -23,11 +23,21 @@
   "documentation": "Documentation",
   "getStarted": "Get Started",
   "retry": "Retry",
-  
+
   "titleImputTabLabel": "Title For Tasks",
   "descriptionImputTabLabel": "Description For Tasks",
   "createButtonSubmit": "Create",
   "tasksTabLabel": "Tasks",
+  "updateTaskSuccess": "your task has been successfully updated",
+  "updateTaskError": "we have error updating your task",
+  "updateTaskLoading": "your task is being updated wait",
+  "EditTaskButtonHeading": "this space is for you to edit your homework",
+  "deleteTaskSuccessMessage": "your task has been successfully deleted",
+  "deleteTaskErrorMessage": "We're having trouble deleting your homework",
+  "deleteTaskLoadingMessage": "we are deleting your task wait",
+  "deleteTaskModalHeading": "Are you sure you want to delete your task?",
+  "deleteTaskSubmitLabel": "delete task",
+
   "roles": {
     "owner": {
       "label": "Owner",

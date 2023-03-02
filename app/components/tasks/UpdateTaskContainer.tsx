@@ -30,7 +30,7 @@ const EditTaskButton: React.FC<{
   const taskTextControl = register('taskText', { value: currentTaskText });
 
   const onError = useCallback(() => {
-    toast.error(`Please write some text to post`);
+    toast.error(`Please write some text to task`);
   }, []);
 
   const onSubmit = async (taskText: string) => {
@@ -44,10 +44,10 @@ const EditTaskButton: React.FC<{
       {
         success: () => {
           setIsOpen(false);
-          return t<string>(`post:updateTaskSuccess`);
+          return t<string>(`common:updateTaskSuccess`);
         },
-        error: t<string>(`post:updateTaskError`),
-        loading: t<string>(`post:updateTaskLoading`),
+        error: t<string>(`common:updateTaskError`),
+        loading: t<string>(`common:updateTaskLoading`),
       }
     );
   };
@@ -62,7 +62,7 @@ const EditTaskButton: React.FC<{
     <Modal
       isOpen={isOpen}
       setIsOpen={setIsOpen}
-      heading={t<string>('post:EditTaskButtonHeading')}
+      heading={t<string>('common:EditTaskButtonHeading')}
     >
       <form
         onSubmit={handleSubmit((value) => {
@@ -70,30 +70,29 @@ const EditTaskButton: React.FC<{
         })}
       >
         <div className={'flex flex-col space-y-4'}>
-        <TextField>
-              <TextField.Label>
-                <Trans i18nKey={'task:titleInputLabel'} />
-                <TextField.Input
-                  name={taskTextControl.name}
-                  innerRef={taskTextControl.ref}
-                  onChange={taskTextControl.onChange}
-                  onBlur={taskTextControl.onBlur}
-                  required
-                  data-cy={'task-title-input'}
-                  placeholder={'Ex. "Do this by night"'}
-                />
-              </TextField.Label>
-            </TextField>
           <TextField>
             <TextField.Label>
-              <Trans i18nKey={'post:taskTextInputLabel'} />
+              <Trans i18nKey={'common:titleInputLabel'} />
               <TextField.Input
-                data-cy={'task-title-input'}
-                required
                 name={taskTextControl.name}
                 innerRef={taskTextControl.ref}
                 onChange={taskTextControl.onChange}
                 onBlur={taskTextControl.onBlur}
+                required
+                data-cy={'task-title-input'}
+              />
+            </TextField.Label>
+          </TextField>
+          <TextField>
+            <TextField.Label>
+              <Trans i18nKey={'common:descriptionImputTabLabel'} />
+              <TextField.Input
+                name={taskTextControl.name}
+                innerRef={taskTextControl.ref}
+                onChange={taskTextControl.onChange}
+                onBlur={taskTextControl.onBlur}
+                required
+                data-cy={'task-title-input'}
               />
             </TextField.Label>
           </TextField>
@@ -102,7 +101,7 @@ const EditTaskButton: React.FC<{
             className={'w-full md:w-auto'}
             loading={loading}
           >
-            <Trans i18nKey={'post:updateTaskSubmitLabel'} />
+            <Trans i18nKey={'common:createButtonSubmit'} />
           </Button>
         </div>
       </form>
