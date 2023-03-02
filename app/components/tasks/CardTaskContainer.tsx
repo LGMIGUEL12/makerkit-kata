@@ -1,28 +1,22 @@
 import DeleteButtonTask from './DeleteButtonTask';
 import EditButtonTask from './EditButtonTask';
 
-const CardTaskContainer: React.FC<{}> = () => {
+import type Task from '~/lib/tasks/@type/task';
+
+const CardTaskContainer: React.FC<{ task: Task }> = ({ task }) => {
   return (
-    <>
-      <div
-        className={`flex flex-col space-y-4 md:space-y-0 lg:mt-8 lg:flex-row lg:space-x-14 xl:space-x-20`}
-      >
-        <div className={'grid grid-cols-4'}>
-          <div className="h-30 p6 border-1 m-5 flex flex-col rounded border-inherit text-center">
-            <h1 className="text-center text-base font-bold">title form task</h1>
-            <p className="text-base">description form task</p>
-            <div className="flex justify-around">
-              <div>
-                <EditButtonTask />
-              </div>
-              <div>
-                <DeleteButtonTask />
-              </div>
-            </div>
-          </div>
+    <div className="h-30 p6 border-1 m-5 flex flex-col rounded border-inherit text-center">
+      <h1 className="text-center text-base font-bold">{task.title}</h1>
+      <p className="text-base">{task.description}</p>
+      <div className="flex justify-around">
+        <div>
+          <EditButtonTask task={task} />
+        </div>
+        <div>
+          <DeleteButtonTask taskId={task.id as string} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

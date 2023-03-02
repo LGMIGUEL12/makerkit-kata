@@ -1,7 +1,7 @@
 import React from 'react';
 import Heading from '~/core/ui/Heading';
 import CreateTaskImputs from './CreateTaskImputs';
-import CardTaskContainer from './CardTaskContainer';
+import ListTasks from './ListTask';
 
 const TasksContainer: React.FC<{}> = () => {
   return (
@@ -15,7 +15,7 @@ const TasksContainer: React.FC<{}> = () => {
           <Heading type={2}>Tasks To Do</Heading>
         </div>
         <div>
-          <CardTaskContainer />
+          <ListTasks />
         </div>
       </div>
     </>
