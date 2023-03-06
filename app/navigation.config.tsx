@@ -22,7 +22,7 @@ const NAVIGATION_CONFIG = {
       },
     },
     {
-      label: 'commmon:tasksTabLabel',
+      label: 'common:tasksTabLabel',
       path: '/tasks',
       Icon: ({ className }: { className: string }) => {
         return <ClipboardDocumentCheckIcon className={className} />;

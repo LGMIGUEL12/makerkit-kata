@@ -6,7 +6,7 @@ const TaskInputsContainer: React.FC<{}> = () => {
   return (
     <>
       <form>
-        <div className={'flex flex-col space-y-4'}>
+        <div className={'flex flex-col space-y-4 mb-2'}>
           <TextField>
             <TextField.Label>
               <Trans i18nKey={'common:titleFormTask'} />
@@ -32,9 +32,11 @@ const TaskInputsContainer: React.FC<{}> = () => {
             </TextField.Label>
           </TextField>
 
-          <Button>
-            <Trans i18nKey={'common:buttonCreateTask'} />
-          </Button>
+          <div className={'flex justify-end'}>
+            <Button className={'w-full md:w-auto'}>
+              <Trans i18nKey={'common:buttonCreateTask'} />
+            </Button>
+          </div>
         </div>
       </form>
     </>
