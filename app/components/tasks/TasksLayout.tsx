@@ -1,9 +1,12 @@
-const TasksLayout: React.FC<{}>=()=>{
-    return(
-        <>
-            <h1>Tasks</h1>
-        </>
-    );
-}
+import TaskInputsContainer from './TaskInputsContainer';
+
+const TasksLayout: React.FC<{}> = () => {
+  return (
+    <>
+      <TaskInputsContainer />
+      <hr />
+    </>
+  );
+};
 
 export default TasksLayout;
