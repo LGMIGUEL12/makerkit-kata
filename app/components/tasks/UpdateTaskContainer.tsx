@@ -72,7 +72,7 @@ const EditTaskButton: React.FC<{
         <div className={'flex flex-col space-y-4'}>
           <TextField>
             <TextField.Label>
-              <Trans i18nKey={'common:titleInputLabel'} />
+              <Trans i18nKey={'common:titleImputTabLabel'} />
               <TextField.Input
                 name={taskTextControl.name}
                 innerRef={taskTextControl.ref}

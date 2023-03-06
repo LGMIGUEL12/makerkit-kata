@@ -36,7 +36,6 @@ function useUpdateTask() {
 
       try {
         setLoading(true);
-
         const tasksCollection = collection(firestore, TASKS_COLLECTION);
 
         const userDoc = doc(
