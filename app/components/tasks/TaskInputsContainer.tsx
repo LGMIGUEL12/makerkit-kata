@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Trans, useTranslation } from 'react-i18next';
@@ -7,8 +7,7 @@ import TextField from '~/core/ui/TextField';
 import useCreateTask from '~/lib/tasks/hooks/use-create-task';
 
 const TaskInputsContainer: React.FC<{}> = () => {
-  const [createTask, createTaskState] = useCreateTask();
-  const { loading } = createTaskState;
+  const [createTask, requestState] = useCreateTask();
   const { t } = useTranslation();
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
@@ -37,7 +36,12 @@ const TaskInputsContainer: React.FC<{}> = () => {
       loading: t<string>(`task:createTaskLoading`),
     });
   };
-
+  useEffect(() => {
+    reset({
+      title: '',
+      description: '',
+    });
+  }, [reset]);
   return (
     <>
       <form
@@ -79,7 +83,7 @@ const TaskInputsContainer: React.FC<{}> = () => {
             <Button
               className={'w-full md:w-auto'}
               data-cy={'create-task-submit-button'}
-              loading={loading}
+              loading={requestState.loading}
             >
               <Trans i18nKey={'common:buttonCreateTask'} />
             </Button>
