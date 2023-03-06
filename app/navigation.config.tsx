@@ -1,5 +1,9 @@
 import configuration from '~/configuration';
-import { Cog8ToothIcon, Squares2X2Icon } from '@heroicons/react/24/outline';
+import {
+  Cog8ToothIcon,
+  Squares2X2Icon,
+  ClipboardDocumentCheckIcon,
+} from '@heroicons/react/24/outline';
 
 const NAVIGATION_CONFIG = {
   items: [
@@ -15,6 +19,13 @@ const NAVIGATION_CONFIG = {
       path: '/settings',
       Icon: ({ className }: { className: string }) => {
         return <Cog8ToothIcon className={className} />;
+      },
+    },
+    {
+      label: 'commmon:tasksTabLabel',
+      path: '/tasks',
+      Icon: ({ className }: { className: string }) => {
+        return <ClipboardDocumentCheckIcon className={className} />;
       },
     },
   ],
