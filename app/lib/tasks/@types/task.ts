@@ -1,6 +1,6 @@
 import type { Timestamp } from 'firebase/firestore';
 
-export interface task {
+export interface Task {
   taskText: string;
   id?: string;
   title: string;

@@ -11,7 +11,7 @@ import {
   
   import type { FirebaseError } from 'firebase-admin';
   import type { CollectionReference } from 'firebase/firestore';
-  import type { task } from '../@types/task';
+  import type { Task } from '../@types/task';
   
   function useCreateTask() {
     const { data: user } = useUser();
@@ -30,9 +30,9 @@ import {
           const tasksCollection = collection(
             firestore,
             TASKS_COLLECTION
-          ) as CollectionReference<task>;
+          ) as CollectionReference<Task>;
   
-          const newTask: task = {
+          const newTask: Task = {
             title,
             description,
             taskText:'',

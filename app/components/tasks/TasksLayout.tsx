@@ -1,4 +1,5 @@
 import Heading from '~/core/ui/Heading';
+import ListTask from './ListTask';
 import TaskInputsContainer from './TaskInputsContainer';
 
 const TasksLayout: React.FC<{}> = () => {
@@ -11,10 +12,10 @@ const TasksLayout: React.FC<{}> = () => {
       </div>
       <hr className={'mt-3 mb-3'} />
       <div className="text-center">
-          <Heading type={2}>Tasks To Do</Heading>
-        </div>
+        <Heading type={2}>Tasks To Do</Heading>
+      </div>
       <div>
-        <h2>aca ira la lista de tareas</h2>
+        <ListTask />
       </div>
     </>
   );
