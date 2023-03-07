@@ -35,7 +35,6 @@ import {
           const newTask: Task = {
             title,
             description,
-            taskText:'',
             isCompleted: false,
           };
   
@@ -46,7 +45,6 @@ import {
             title: newTask.title,
             isCompleted: newTask.isCompleted,
             description: newTask.description,
-            taskText:'',
             createdAt: Timestamp.now(),
             createdBy: user?.uid as string,
           });

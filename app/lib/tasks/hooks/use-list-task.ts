@@ -2,7 +2,7 @@ import { TASKS_COLLECTION } from './../../firestore-collections';
 import { collection, CollectionReference, query } from 'firebase/firestore';
 import { useFirestore, useFirestoreCollectionData } from 'reactfire';
 
-import type Task from '../@types/task';
+import type { Task } from '../@types/task';
 
 /**
  * @name useListTasks

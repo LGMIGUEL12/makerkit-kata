@@ -1,7 +1,8 @@
 import EditButton from './EditButton';
 import DeleteButton from './DeleteButton';
 
-import type Task from '~/lib/tasks/@types/task';
+import type { Task } from '~/lib/tasks/@types/task';
+import { string } from 'zod';
 
 const CardsTasks: React.FC<{ task: Task }> = ({ task }) => {
   return (
@@ -14,7 +15,7 @@ const CardsTasks: React.FC<{ task: Task }> = ({ task }) => {
             <EditButton task={task} />
           </div>
           <div>
-            <DeleteButton taskId={task.id as string} />
+            <DeleteButton  />
           </div>
         </div>
       </div>
