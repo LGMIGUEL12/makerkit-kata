@@ -46,7 +46,7 @@ const EditTaskButton: React.FC<{
 
     await toast.promise(
       updateTask(
-        task.taskId as string,
+        task.id as string,
         task.title as string,
         task.description as string,
         task.isCompleted
