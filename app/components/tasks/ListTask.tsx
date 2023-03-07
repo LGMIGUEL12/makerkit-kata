@@ -32,7 +32,9 @@ const ListTask: React.FC<{}> = () => {
               return <CardsTasks key={task.taskId} task={task} />;
             })}
           </If>
+          
         </div>
+
       </div>
     </>
   );
