@@ -1,4 +1,4 @@
-import EditButton from './EditButton';
+import EditButton from './UpdateTaskButton';
 import DeleteButton from './DeleteButton';
 
 import type { Task } from '~/lib/tasks/@types/task';

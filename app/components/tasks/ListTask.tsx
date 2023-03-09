@@ -29,7 +29,7 @@ const ListTask: React.FC<{}> = () => {
         <div className={'grid grid-cols-4'}>
           <If condition={status === 'success'}>
             {tasks.map((task) => {
-              return <CardsTasks key={task.taskId} task={task} />;
+              return <CardsTasks key={task.id} task={task} />;
             })}
           </If>
           
